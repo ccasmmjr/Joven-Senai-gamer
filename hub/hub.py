@@ -18,14 +18,18 @@ class MyserverHUB:
                 'detalhes': detalhes
             })
             
-    def view_game(self, nome):
+    #def view_game(self, nome):
         
-             user_ref = ref.child('game').child(nome)
-             user_data = user_ref.get()
-             if user_data is not None:
-                return user_data.get('senha')
-             else:
-                return None
+     #        user_ref = ref.child('game').child(nome)
+    #         user_data = user_ref.get()
+     #        if user_data is not None:
+    #            return user_data.get('senha')
+    #         else:
+    #            return None
+    
+    def view_game(self):
+        refe = db.reference('game')
+        return refe.get()
       
     
 server = xmlrpc.server.SimpleXMLRPCServer(("0.0.0.0",8080), allow_none=True)

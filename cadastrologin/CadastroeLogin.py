@@ -12,10 +12,32 @@ ref = db.reference('/')
 
 # Escreva dados no banco de dados
 class MyserverCL:
-    def add_user(self, nome, senha):
-        ref.child('users').child(nome).set({
-        'senha': senha
-    })
+    def add_user(self, nome, senha, adm):
+        if adm == 1:
+            ref.child('admin').child(nome).set({
+                'senha': senha
+            })
+        else:
+             ref.child('users').child(nome).set({
+                'senha': senha
+             })
+        
+    def check_user_credentials(self, nome, senha, adm):
+        if adm == 1:
+             user_ref = ref.child('admin').child(nome)
+             user_data = user_ref.get()
+             if user_data is not None and user_data.get('senha') == senha:
+                return True
+             else:
+                return False
+        else:
+             user_ref = ref.child('users').child(nome)
+             user_data = user_ref.get()
+             if user_data is not None and user_data.get('senha') == senha:
+                return True
+             else:
+                return False
+    
 server = xmlrpc.server.SimpleXMLRPCServer(("0.0.0.0",8000), allow_none=True)
 server.register_instance(MyserverCL)
 server.serve_forever()

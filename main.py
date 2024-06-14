@@ -1,5 +1,6 @@
 import xmlrpc.client
-import sys
+import hubuser
+import hubadmin
 import tkinter as tk
 from tkinter import messagebox
 
@@ -13,14 +14,14 @@ def fazer_login():
         tipo_usuario = "Administrador"
         if serverCL.check_user_credentials(senha, username, senha, adm):
             print("A senha está correta para o usuário.")
-            abrir_outra_janela()
+            hubadmin.abrir_outra_janela(janela)
             janela.withdraw()
         else:
             print("A senha está incorreta ou o usuário não existe.")
     else:
         if serverCL.check_user_credentials(senha, username, senha, adm):
             print("A senha está correta para o usuário.")
-            abrir_outra_janela()
+            hubuser.abrir_outra_janela(janela)
             janela.withdraw()
         else:
             print("A senha está incorreta ou o usuário não existe.")
@@ -39,12 +40,8 @@ def fazer_cadastro():
         tipo_usuario = "Usuário normal"
     messagebox.showinfo("Cadastro", f"Cadastro realizado!\nUsername: {username}\nSenha: {senha}\nTipo de usuário: {tipo_usuario}")
 
-def abrir_outra_janela():
-    outra_janela = tk.Toplevel(janela)
-    outra_janela.title("Outra Janela")
-    label = tk.Label(outra_janela, text="Você fez login com sucesso!")
-    label.pack()
-    #janela.destroy()
+
+    
 
 
 # Cria a janela principal

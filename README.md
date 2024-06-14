@@ -1,8 +1,14 @@
 # Joven-Senai-gamer
 
+Requisto
+python
+xmlrpc
+tinker
+
+para install tinker e so 
+sudo apt install python3-tk
 
 comando para usar
-
 primeiro no terminal do visual studio
 abra outro terminal pararelo e escreva cd cadastrologin para ir para o ditretorio
 apos isso nele execute os ocmandos abaixos

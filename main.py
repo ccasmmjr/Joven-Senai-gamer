@@ -41,7 +41,7 @@ def fazer_cadastro():
     messagebox.showinfo("Cadastro", f"Cadastro realizado!\nUsername: {username}\nSenha: {senha}\nTipo de usuário: {tipo_usuario}")
 
 
-    
+
 
 
 # Cria a janela principal

@@ -1,11 +1,11 @@
-# Joven-Senai-gamer
+# Jovem-Senai-gamer
 
-###Requistos
+### Requistos
 python
 xml-rpc
 tkinter
 
-###Para install tkinter e so 
+### Para install tkinter e so 
 sudo apt install python3-tk
 
 ##Passos para executar o serviço de Cadastro e Login

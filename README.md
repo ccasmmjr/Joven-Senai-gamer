@@ -1,49 +1,49 @@
 # Joven-Senai-gamer
 
-Requisto
+###Requistos
 python
-xmlrpc
-tinker
+xml-rpc
+tkinter
 
-para install tinker e so 
+###Para install tkinter e so 
 sudo apt install python3-tk
 
-comando para usar
-primeiro no terminal do visual studio
-abra outro terminal pararelo e escreva cd cadastrologin para ir para o ditretorio
-apos isso nele execute os ocmandos abaixos
+##Passos para executar o serviço de Cadastro e Login
+
+#Abrir o terminal no VS Code
+Abra um novo terminal no Visual Studio Code e navegue até o diretório cadastrologin com o comando:
+cd cadastrologin
 
 sudo docker build -t cadastro .
 
+#Construir e executar o container
+No terminal, execute os seguintes comandos para construir e executar o container Docker:
+sudo docker build -t cadastro .
 sudo docker run -it -p 8000:8000 cadastro
 
-dentro do container user
+#Atualizar o Container e Executar o Serviço
+Dentro do container, atualize o sistema e execute o script CadastroeLogin.py:
 apt update
-
 python3 CadastroeLogin.py
 
-apos isso o seu servico cadastro e login estara em pe
+Após esses passos, o serviço de cadastro e login estará ativo.
 
-agora abra outro terminal no visual studio sem fechar aquele que vc usou
+##Passos para executar o Service Hub
+#Abrir um novo terminal no VS Code
+Abra um novo terminal no Visual Studio Code sem fechar o terminal anterior.
 
-e use os seguintes comandos
+#Construir e executar o container Docker
 
+No novo terminal, execute os seguintes comandos para construir e executar o container Docker para o serviço Hub:
 sudo docker build -t hub .
-
 sudo docker run -it -p 8080:8080 cadastro
 
-dentro do container user
+#Atualizar o Container e Executar o Serviço
+Dentro do container, atualize o sistema e execute o script hub.py:
 apt update
-
 python3 hub.py
 
-apos isso o seu servico hub estara em pe
+Após esses passos, o serviço Hub estará ativo.
 
-agora tu pode executar a main
-
-lista do que falta
--criar o login
--criar o cadastro
--criar o hub(local que vai mostra o que tem no firebase)
--criar o main onde ele vai fazer os requsitos para os outros
--criar um dockefile para o hub
+##Executar o Script Principal
+Agora você pode executar o script principal conforme necessário.

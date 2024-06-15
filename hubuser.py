@@ -53,28 +53,3 @@ def formatar_string(texto):
     # Formata a string para remover caracteres indesejados e melhorar a legibilidade
     texto_formatado = texto.replace('{', '\n').replace('}', '').replace("'", "")
     return texto_formatado
-
-# Cria a janela principal do Tkinter
-def main():
-    janela = tk.Tk()
-    janela.title("Login")
-    
-    label_usuario = tk.Label(janela, text="Usuário:")
-    label_usuario.pack()
-    
-    entrada_usuario = tk.Entry(janela)
-    entrada_usuario.pack()
-    
-    label_senha = tk.Label(janela, text="Senha:")
-    label_senha.pack()
-    
-    entrada_senha = tk.Entry(janela, show="*")
-    entrada_senha.pack()
-    
-    botao_login = tk.Button(janela, text="Login", command=lambda: abrir_outra_janela(janela))
-    botao_login.pack()
-    
-    janela.mainloop()
-
-if __name__ == "__main__":
-    main()

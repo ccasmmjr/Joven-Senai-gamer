@@ -38,6 +38,7 @@ No novo terminal, execute os seguintes comandos para construir e executar o cont
 sudo docker build -t hub .
 sudo docker run -it -p 8080:8080 cadastro
 
+
 ## Atualizar o Container e Executar o Serviço
 Dentro do container, atualize o sistema e execute o script hub.py:
 apt update
@@ -47,3 +48,10 @@ Após esses passos, o serviço Hub estará ativo.
 
 # Executar o Script Principal
 Agora você pode executar o script principal conforme necessário.
+
+
+obs; se der um erro na hora de upar o container provavelmente será devido a não encontrar a versão do firebase admin
+então vai nos dockfiles procure pelo comando
+run pip instala firebase-admin 
+e troque por
+run pip install firebase-admin==6.0.1
